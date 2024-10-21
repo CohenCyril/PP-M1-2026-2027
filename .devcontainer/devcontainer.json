@@ -1,0 +1,10 @@
+{
+    "name": "aidaysensl",
+    "image": "cohencyril/aidaysensl",
+    "postAttachCommand": "make -j8 -k",
+    "customizations": {
+        "vscode": {
+            "extensions": ["rocq-prover.vsrocq", "gares.elpi-lang", "gares.coq-elpi-lang"],
+        }
+    }
+}

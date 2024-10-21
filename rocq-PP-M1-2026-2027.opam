@@ -1,0 +1,37 @@
+# This file was generated from `meta.yml`, please do not edit manually.
+# Follow the instructions on https://github.com/coq-community/templates to regenerate.
+
+opam-version: "2.0"
+maintainer: "Cyril Cohen <cyril.cohen@inria.fr>"
+version: "dev"
+
+homepage: "https://github.com/CohenCyril/m1-pp-2026-2027"
+dev-repo: "git+https://github.com/CohenCyril/m1-pp-2026-2027.git"
+bug-reports: "https://github.com/CohenCyril/m1-pp-2026-2027/issues"
+license: "LGPL-2.1-or-later"
+
+synopsis: "A [tutorial](theories/tutorial.v) for AI Days @ ENS de Lyon"
+description: """
+A [tutorial](theories/tutorial.v) for AI Days @ ENS de Lyon"""
+
+build: [make "-j%{jobs}%"]
+install: [make "install"]
+depends: [
+  "coq" 
+  "rocq-mathcomp-character" {= "2.5.0"}
+  "coq-mathcomp-algebra-tactics" {= "1.2.7"}
+  "coq-mathcomp-zify" {= "1.6.0+2.0+8.18"}
+  "rocq-mathcomp-analysis" {= "1.16.0"}
+]
+
+tags: [
+  "category:Computer Science"
+  "category:Miscellaneous/Coq Extensions"
+  "keyword:tutorial"
+  "keyword:ssreflect"
+  "keyword:mathcomp"
+  "logpath:AIDaysENSL"
+]
+authors: [
+  "Cyril Cohen"
+]
