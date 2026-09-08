@@ -334,8 +334,8 @@ forms are worth distinguishing.
 - `apply/equiv` uses an equivalence `equiv` (stated as `<->` or `reflect`)
   from left to right, or if it fails, from right to left.
 
-`exact: thm` is an `apply: thm` that is required to finish the goal outright,
-with no premise left over.
+`exact: thm` is defined as `by apply: thm` using the finisher `by` after applying
+the theorem: that is required to finish the goal with no premise left over.
 *)
 
 (* (A -> B -> C) <-> (A /\ B -> C) *)
