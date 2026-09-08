@@ -162,7 +162,7 @@ bookkeeping.)
   goal is `B`, then `apply: thm` reduces the goal to `A`. This is modus
   ponens read backwards, the workhorse of structured proof. We use the
   SSReflect form `apply: thm`.
-- `exact: thm` is an `apply: thm` that must close the goal.
+- `exact: thm` is `by apply: thm` that must close the goal.
 - `apply/equiv` uses an equivalence `equiv` (stated as `<->` or `reflect`)
   from left to right, or if it fails, from right to left.
 - `rewrite`: substitutes with equalities. If `e : a = b` then `rewrite e`
@@ -361,6 +361,7 @@ Qed.
    by name fragment and/or by a pattern with holes `_`. For instance:
        Search (_ + _) (_ <= _).
        Search "addn" "C".     (* names containing addn and C: addnC, ... *)
+   `Locate "+".` to find the name of the definition behind `+ `.
    `About leq_trans.` prints a lemma's statement; `Print` unfolds a
    definition. *)
 
@@ -403,7 +404,7 @@ Proof. lia. Qed.
    `lia` is linear and will refuse it. *)
 Lemma square_of_sum_nat (a b : nat) : (a + b) ^ 2 = a ^ 2 + 2 * a * b + b ^ 2.
 Proof.
-nia.   (* nonlinear, heuristic -- it happens to handle this one *)
+nia.   (* nonlinear, heuristic --  by chance it happens to handle this one *)
 Qed.
 
 (*md
@@ -419,7 +420,7 @@ Qed.
  
 We leave the reach of `lia`/`nia`/`ring`, as soon as we slightly step outside
 arithmetic: quantify over a data structure, or use a higher-order recursion
-combinator. Arithmetic solvers do not recognize a goal shape they know,
+combinator. Arithmetic solvers do not recognize a goal shape they don't know,
 and give up on the statement, yet after an induction and a few rewriting steps
 one can work towards getting leaf subgoals falling back into its scope.
 *)
@@ -480,7 +481,7 @@ Lemma ring_binom : (x + y) ^+ 2 = x ^+ 2 + x * y *+ 2 + y ^+ 2.
 Proof. ring. Qed.
 
 (*md
-   A polynomial identity that would be painful by rewriting; `ring` eats it. *)
+   A polynomial identity that would be painful by rewriting; `ring` solves it. *)
 Lemma ring_cube : (x - y) * (x ^+ 2 + x * y + y ^+ 2) = x ^+ 3 - y ^+ 3.
 Proof. ring. Qed.
 End AlgebraTactics.
@@ -509,7 +510,7 @@ Lemma lra_linear : x <= 1 -> y <= 1 -> x + y <= 2.
 Proof. lra. Qed.
 
 (*md
-   A nonlinear inequality: AM-QM style. `lra` is linear and refuses it, but
+   A nonlinear inequality. `lra` is linear and refuses it, but
    `nra` (nonlinear, heuristic) finds the sum-of-squares certificate. *)
 Lemma by_hand_amqm : 0 <= (x - y) ^+ 2.
 Proof. by rewrite sqr_ge0. Qed.
@@ -683,12 +684,12 @@ End Continuity.
 - The Mathematical Components book (Assia Mahboubi & Enrico Tassi) is the canonical
   reference for the proof style used throughout.
 
-- The MathComp School lessons & exercises (`lesson1.v` ... `lesson8.v`) drill
+- The MathComp School lessons & exercises (`lesson1.v` ... `lesson8.v`):
   ssreflect, arithmetic, finite types, big operators, algebra, polynomials,
   matrices, and reflection-based automation.
   https://mathcomp-schools.gitlabpages.inria.fr/2022-12-school/school
 
-- For analysis, the mathcomp-analysis manual and its `theories/` files.
+- For analysis, the mathcomp-analysis documentation and its `theories/` files.
 
 - Reflexes worth building: `Search` before you reprove anything, read a lemma
   with `About`. `rewrite /def` to generally not a good idea, use lemmas!
