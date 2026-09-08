@@ -20,7 +20,7 @@ depends: [
   "coq" 
   "rocq-mathcomp-character" {= "2.5.0"}
   "coq-mathcomp-algebra-tactics" {= "1.2.7"}
-  "coq-mathcomp-zify" {= "1.6.0+2.0+8.18"}
+  "coq-mathcomp-zify" {= "1.7.0+2.4+9.0"}
   "rocq-mathcomp-analysis" {= "1.16.0"}
 ]
 
