@@ -1,5 +1,5 @@
 ---
-fullname: AI Days @ ENSL -- Rocq Tutorial
+fullname: PP M1 2026-2027 -- Rocq Tutorial
 shortname: m1-pp-2026-2027
 organization: CohenCyril
 community: false
@@ -7,10 +7,10 @@ action: false
 coqdoc: false
 
 synopsis: >-
-  A [tutorial](theories/tutorial.v) for AI Days @ ENS de Lyon
+  A [tutorial](theories/tutorial.v) for PP M1 2026-2027
 
 description: |-
-  A [tutorial](theories/tutorial.v) for AI Days @ ENS de Lyon
+  A [tutorial](theories/tutorial.v) for PP M1 2026-2027
 
 authors:
 - name: Cyril Cohen
@@ -54,7 +54,7 @@ dependencies:
     version: '{= "1.16.0"}'
   description: Mathematical components analysis library 1.16.0
 
-namespace: AIDaysENSL 
+namespace: PPM1 
 
 keywords:
 - name: tutorial
