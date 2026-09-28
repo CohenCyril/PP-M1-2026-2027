@@ -1,6 +1,6 @@
 theories/tutorial.v
 theories/extra.v
-theories/lecture.v
+# theories/lecture.v
 
 -Q theories ND 
 
