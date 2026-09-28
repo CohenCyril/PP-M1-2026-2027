@@ -18,9 +18,9 @@ A tutorial and course for Proofs and Programs M1 ICA
 build: [make "-j%{jobs}%"]
 install: [make "install"]
 depends: [
-  "coq" {= "9.1"} 
+  "coq" {= "9.1.1"} 
   "coq-deriving" 
-  "coq-equations"
+  "rocq-equations"
   "rocq-mathcomp-character" {= "2.5.0"}
   "coq-mathcomp-algebra-tactics" {= "1.2.7"}
   "coq-mathcomp-zify" {= "1.7.0+2.4+9.0"}
