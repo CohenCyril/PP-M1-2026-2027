@@ -1,6 +1,8 @@
 theories/tutorial.v
+theories/extra.v
+theories/lecture.v
 
--Q theories PPM1 
+-Q theories ND 
 
 -arg -w -arg -projection-no-head-constant
 -arg -w -arg -redundant-canonical-projection

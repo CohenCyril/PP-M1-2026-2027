@@ -10,9 +10,10 @@ dev-repo: "git+https://github.com/CohenCyril/m1-pp-2026-2027.git"
 bug-reports: "https://github.com/CohenCyril/m1-pp-2026-2027/issues"
 license: "LGPL-2.1-or-later"
 
-synopsis: "A [tutorial](theories/tutorial.v) for AI Days @ ENS de Lyon"
+synopsis: "A tutorial and course for Proofs and Programs M1 ICA"
 description: """
-A [tutorial](theories/tutorial.v) for AI Days @ ENS de Lyon"""
+A tutorial and course for Proofs and Programs M1 ICA
+"""
 
 build: [make "-j%{jobs}%"]
 install: [make "install"]
@@ -30,7 +31,7 @@ tags: [
   "keyword:tutorial"
   "keyword:ssreflect"
   "keyword:mathcomp"
-  "logpath:AIDaysENSL"
+  "logpath:ND"
 ]
 authors: [
   "Cyril Cohen"
