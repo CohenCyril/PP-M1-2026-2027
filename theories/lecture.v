@@ -212,11 +212,54 @@ Qed.
 
 Definition intro_imply_rule (Γ : list formula) (A B : formula) : rule. Admitted.
 
+(* Exercise 1 (easy) *)
+
 Lemma intro_imply_rule_derivable  Γ A B : derivable (intro_imply_rule  Γ A B).
 Admitted.
 
 Lemma intro_imply_rule_reversible  Γ A B : reversible (intro_imply_rule  Γ A B).
 Admitted.
+
+
+(* Exercicse 2 (easy) *)
+(* Defined the rules NegI, NegE and TopI, show they are derivable,
+   and define the smart constructor *)
+
+(* Exercise 3 (easy) *)
+(* Show the following rules are admissible. *)
+(* (Do not hesitate to provide helper lemmas and tactics) *)
+
+Lemma Adm1 Γ (A := Var 0) (B := Var 1) (C := Var 2) :
+  admissible (Rule [:: [:: B, A & Γ] ⊢ C] ([:: A ∧ B & Γ] ⊢ C)).
+Admitted.
+
+Lemma Adm2 Γ (A := Var 0) (B := Var 1) (C := Var 2) :
+  admissible (Rule [:: [:: A ∧ B & Γ] ⊢ C] ([:: B, A & Γ] ⊢ C)).
+Admitted.
+
+Lemma deMorgan1 (A := Var 0) (B := Var 1) :
+  derivable (⊢ ¬ A ∧ ¬ B ⇒ ¬ (A ∨ B)).
+Admitted.
+
+(* Exercise 5 (medium) *)
+(* Admissibility of weakening *)
+Lemma weakening Γ Γ' A : {subset Γ <= Γ'} ->
+  derivation [::] (Γ ⊢ A) -> derivation [::] (Γ' ⊢ A).
+Admitted.
+
+(* Exercise 6 (medium) *)
+(* Show the reversibilty or irrversibility of the rules of NJ, assuming consistency *)
+Axiom consistency : derivable (⊢ ⊥) -> False.
+
+(* Exercise 7 (hard) *)
+(* Show that derivability and admissibility is stable under substitution of variables *)
+
+(* Exercise 8 (hard) *)
+(* In a simplified NJ (keep only variables and implication) define the STLC
+   and exhibit Curry Howard iso *)
+
+(* Exercise 9 (hard) *)
+(* Define the submformula property *)
 
 End NJ.
 

@@ -1,6 +1,10 @@
 theories/tutorial.v
 theories/extra.v
+theories/NJi.v
 # theories/lecture.v
+# theories/STLC.v
+
+
 
 -Q theories ND 
 
